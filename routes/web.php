@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('prova', function () {
+    return 'Autorizado';
+})->middleware(['age','auth:sanctum']);
+
+Route::get('nao-autorizado', function () {
+    return "Não autorizado";
+});

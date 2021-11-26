@@ -9,32 +9,45 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.5/tailwind.min.css">
 
 </head>
 
 @php
-    $color = 'red';
+$color = 'red';
+$alert = 'alert';
 @endphp
 
 <body>
     <div class="container mx-auto">
-        <x-alert :color="$color">
+        <x-alert :color="$color" class="mb-4">
 
             <x-slot name="title">
                 Titulo 1
             </x-slot>
 
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur vero dolore qui facere facilis quisquam repudiandae dolor? Illo, animi modi!
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur vero dolore qui facere facilis quisquam
+            repudiandae dolor? Illo, animi modi!
         </x-alert>
 
-        <x-alert>
+        <x-alert2 color="blue" class="mb-4">
             <x-slot name="title">
-                Titulo 2
+                Titulo
             </x-slot>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, enim?
-        </x-alert>
+
+            Lorem ipsum dolor sit amet.
+        </x-alert2>
+
+        <x-dynamic-component :component="$alert">
+            <x-slot name="title">
+                Titulo
+            </x-slot>
+
+            Lorem ipsum dolor sit amet.
+
+        </x-dynamic-component>
+
     </div>
 </body>
 
