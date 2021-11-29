@@ -23,7 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('prova', function () {
     return 'Autorizado';
-})->middleware(['age','auth:sanctum']);
+})->middleware(['age','auth:sanctum']); //referenciando o apelido que foi criado em Kernel.php para a autenticação da idade
 
 Route::get('nao-autorizado', function () {
     return "Não autorizado";

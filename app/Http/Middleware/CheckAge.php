@@ -16,7 +16,8 @@ class CheckAge
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->email == "luiz@luiz.luiz") {
+        //só será autorizado se usuario ter o email igual ao que foi foi declarado
+        if (auth()->user()->email == "luiz@luihz.luiz") {
             return $next($request);
         } else {
             return redirect('nao-autorizado');
